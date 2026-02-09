@@ -70,17 +70,17 @@ class SimpleTodos extends Component {
               name="newTodoTitle"
               value={newTodoTitle}
               onChange={this.handleChange}
-              placeholder="Enter todo title"
+              placeholder="What needs to be done?"
             />
             <input
               type="number"
               name="newTodoCount"
               value={newTodoCount}
               onChange={this.handleChange}
-              placeholder="Enter number of todos"
+              min="1"
             />
             <button onClick={this.handleAddTodo} type="button">
-              Add
+              Add Todo
             </button>
           </div>
           <ul className="todos-list">

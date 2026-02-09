@@ -36,10 +36,15 @@ class TodoItem extends Component {
           <>
             <input
               type="text"
+              className="edit-input"
               value={updatedTitle}
               onChange={this.handleChange}
             />
-            <button onClick={this.handleSave} type="button">
+            <button
+              onClick={this.handleSave}
+              type="button"
+              className="save-btn"
+            >
               Save
             </button>
           </>
@@ -47,16 +52,27 @@ class TodoItem extends Component {
           <>
             <input
               type="checkbox"
+              className="checkbox"
               checked={todoDetails.completed}
               onChange={() => toggleComplete(todoDetails.id)}
             />
             <p className="title">{todoDetails.title}</p>
-            <button onClick={this.handleEdit} type="button">
-              Edit
-            </button>
-            <button onClick={() => deleteTodo(todoDetails.id)} type="button">
-              Delete
-            </button>
+            <div className="buttons-container">
+              <button
+                onClick={this.handleEdit}
+                type="button"
+                className="edit-btn"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => deleteTodo(todoDetails.id)}
+                type="button"
+                className="delete-btn"
+              >
+                Delete
+              </button>
+            </div>
           </>
         )}
       </li>
